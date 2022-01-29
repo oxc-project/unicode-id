@@ -3,6 +3,8 @@
 Determine if a `char` is a valid identifier for a parser and/or lexer according to
 [Unicode Standard Annex #31](http://www.unicode.org/reports/tr31/) rules.
 
+This is a clone of [unicode-xid](https://github.com/unicode-rs/unicode-xid).
+
 ```rust
 use unicode_id::UnicodeID;
 

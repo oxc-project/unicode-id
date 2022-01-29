@@ -1,15 +1,16 @@
 [package]
 name = "unicode-id"
-version = "0.2.2"
-authors = ["erick.tryzelaar <erick.tryzelaar@gmail.com>",
+version = "0.3.0"
+authors = [
+           "Boshen <boshenc@gmail.com>",
+           "erick.tryzelaar <erick.tryzelaar@gmail.com>",
            "kwantam <kwantam@gmail.com>",
            "Manish Goregaokar <manishsmail@gmail.com>"
            ]
 
 homepage = "https://github.com/Boshen/unicode-id"
 repository = "https://github.com/Boshen/unicode-id"
-# FIXME
-# documentation = "https://unicode-rs.github.io/unicode-xid"
+documentation = "https://docs.rs/unicode-id"
 license = "MIT OR Apache-2.0"
 keywords = ["text", "unicode", "unicode-id"]
 readme = "README.md"
@@ -27,7 +28,7 @@ no_std = []
 bench = []
 
 [dev-dependencies]
-criterion = "0.3"
+criterion = "0.3.5"
 
 [[bench]]
 name = "id"
