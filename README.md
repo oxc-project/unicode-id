@@ -1,30 +1,28 @@
-# unicode-xid
+# unicode-id
 
 Determine if a `char` is a valid identifier for a parser and/or lexer according to
 [Unicode Standard Annex #31](http://www.unicode.org/reports/tr31/) rules.
 
-[![Build Status](https://img.shields.io/github/workflow/status/unicode-rs/unicode-xid/CI/master)](https://github.com/unicode-rs/unicode-xid/actions?query=branch%3Amaster)
-
-[Documentation](https://unicode-rs.github.io/unicode-xid/unicode_xid/index.html)
-
 ```rust
-extern crate unicode_xid;
-
-use unicode_xid::UnicodeXID;
+use unicode_id::UnicodeID;
 
 fn main() {
     let ch = 'a';
-    println!("Is {} a valid start of an identifier? {}", ch, UnicodeXID::is_xid_start(ch));
+    println!("Is {} a valid start of an identifier? {}", ch, UnicodeID::is_id_start(ch));
 }
 ```
 
 # features
 
-unicode-xid supports a `no_std` feature. This eliminates dependence
+unicode-id supports a `no_std` feature. This eliminates dependence
 on std, and instead uses equivalent functions from core.
 
 
 # changelog
+## 0.3.0
+
+- Fork repo for unicode-id
+- Update to Unicode 14.0.0
 
 ## 0.2.2
 

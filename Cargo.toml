@@ -1,21 +1,21 @@
 [package]
-
-name = "unicode-xid"
+name = "unicode-id"
 version = "0.2.2"
 authors = ["erick.tryzelaar <erick.tryzelaar@gmail.com>",
            "kwantam <kwantam@gmail.com>",
            "Manish Goregaokar <manishsmail@gmail.com>"
            ]
 
-homepage = "https://github.com/unicode-rs/unicode-xid"
-repository = "https://github.com/unicode-rs/unicode-xid"
-documentation = "https://unicode-rs.github.io/unicode-xid"
+homepage = "https://github.com/Boshen/unicode-id"
+repository = "https://github.com/Boshen/unicode-id"
+# FIXME
+# documentation = "https://unicode-rs.github.io/unicode-xid"
 license = "MIT OR Apache-2.0"
-keywords = ["text", "unicode", "xid"]
+keywords = ["text", "unicode", "unicode-id"]
 readme = "README.md"
 description = """
-Determine whether characters have the XID_Start
-or XID_Continue properties according to
+Determine whether characters have the ID_Start
+or ID_Continue properties according to
 Unicode Standard Annex #31.
 """
 exclude = ["/.github/**", "/scripts/*"]
@@ -30,5 +30,5 @@ bench = []
 criterion = "0.3"
 
 [[bench]]
-name = "xid"
+name = "id"
 harness = false

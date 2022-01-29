@@ -16,80 +16,80 @@ use std::prelude::v1::*;
 use test::Bencher;
 
 #[cfg(feature = "bench")]
-use UnicodeXID;
+use UnicodeID;
 
 #[cfg(feature = "bench")]
 #[bench]
-fn cargo_is_xid_start(b: &mut Bencher) {
+fn cargo_is_id_start(b: &mut Bencher) {
     let string = iter::repeat('a').take(4096).collect::<String>();
 
     b.bytes = string.len() as u64;
-    b.iter(|| string.chars().all(super::UnicodeXID::is_xid_start));
+    b.iter(|| string.chars().all(super::UnicodeID::is_id_start));
 }
 
 #[cfg(feature = "bench")]
 #[bench]
-fn stdlib_is_xid_start(b: &mut Bencher) {
+fn stdlib_is_id_start(b: &mut Bencher) {
     let string = iter::repeat('a').take(4096).collect::<String>();
 
     b.bytes = string.len() as u64;
-    b.iter(|| string.chars().all(char::is_xid_start));
+    b.iter(|| string.chars().all(char::is_id_start));
 }
 
 #[cfg(feature = "bench")]
 #[bench]
-fn cargo_xid_continue(b: &mut Bencher) {
+fn cargo_id_continue(b: &mut Bencher) {
     let string = iter::repeat('a').take(4096).collect::<String>();
 
     b.bytes = string.len() as u64;
-    b.iter(|| string.chars().all(super::UnicodeXID::is_xid_continue));
+    b.iter(|| string.chars().all(super::UnicodeID::is_id_continue));
 }
 
 #[cfg(feature = "bench")]
 #[bench]
-fn stdlib_xid_continue(b: &mut Bencher) {
+fn stdlib_id_continue(b: &mut Bencher) {
     let string = iter::repeat('a').take(4096).collect::<String>();
 
     b.bytes = string.len() as u64;
-    b.iter(|| string.chars().all(char::is_xid_continue));
+    b.iter(|| string.chars().all(char::is_id_continue));
 }
 
 #[test]
-fn test_is_xid_start() {
+fn test_is_id_start() {
     let chars = ['A', 'Z', 'a', 'z', '\u{1000d}', '\u{10026}'];
 
     for ch in &chars {
-        assert!(super::UnicodeXID::is_xid_start(*ch), "{}", ch);
+        assert!(super::UnicodeID::is_id_start(*ch), "{}", ch);
     }
 }
 
 #[test]
-fn test_is_not_xid_start() {
+fn test_is_not_id_start() {
     let chars = [
         '\x00', '\x01', '0', '9', ' ', '[', '<', '{', '(', '\u{02c2}', '\u{ffff}',
     ];
 
     for ch in &chars {
-        assert!(!super::UnicodeXID::is_xid_start(*ch), "{}", ch);
+        assert!(!super::UnicodeID::is_id_start(*ch), "{}", ch);
     }
 }
 
 #[test]
-fn test_is_xid_continue() {
+fn test_is_id_continue() {
     let chars = ['0', '9', 'A', 'Z', 'a', 'z', '_', '\u{1000d}', '\u{10026}'];
 
     for ch in &chars {
-        assert!(super::UnicodeXID::is_xid_continue(*ch), "{}", ch);
+        assert!(super::UnicodeID::is_id_continue(*ch), "{}", ch);
     }
 }
 
 #[test]
-fn test_is_not_xid_continue() {
+fn test_is_not_id_continue() {
     let chars = [
         '\x00', '\x01', ' ', '[', '<', '{', '(', '\u{02c2}', '\u{ffff}',
     ];
 
     for &ch in &chars {
-        assert!(!super::UnicodeXID::is_xid_continue(ch), "{}", ch);
+        assert!(!super::UnicodeID::is_id_continue(ch), "{}", ch);
     }
 }

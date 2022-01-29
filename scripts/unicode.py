@@ -183,11 +183,11 @@ if __name__ == "__main__":
             unicode_version = re.search(pattern, readme.read()).groups()
         rf.write("""
 /// The version of [Unicode](http://www.unicode.org/)
-/// that this version of unicode-xid is based on.
+/// that this version of unicode-id is based on.
 pub const UNICODE_VERSION: (u64, u64, u64) = (%s, %s, %s);
 """ % unicode_version)
         emit_bsearch_range_table(rf)
 
-        want_derived = ["XID_Start", "XID_Continue"]
+        want_derived = ["ID_Start", "ID_Continue"]
         derived = load_properties("DerivedCoreProperties.txt", want_derived)
         emit_property_module(rf, "derived_property", derived, want_derived)
