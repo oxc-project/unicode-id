@@ -29,8 +29,6 @@ fn bsearch_range_table(c: char, r: &[(char, char)]) -> bool {
             Greater
         } else if hi < c {
             Less
-        } else if hi < c {
-            Less
         } else {
             Equal
         }

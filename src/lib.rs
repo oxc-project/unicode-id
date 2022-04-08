@@ -73,17 +73,13 @@ impl UnicodeID for char {
     #[inline]
     fn is_id_start(self) -> bool {
         // Fast-path for ascii idents
-        ('a' <= self && self <= 'z')
-            || ('A' <= self && self <= 'Z')
-            || (self > '\x7f' && derived_property::ID_Start(self))
+        matches!(self, 'a'..='z' | 'A'..='Z') || (self > '\x7f' && derived_property::ID_Start(self))
     }
 
     #[inline]
     fn is_id_continue(self) -> bool {
         // Fast-path for ascii idents
-        ('a' <= self && self <= 'z')
-            || ('A' <= self && self <= 'Z')
-            || ('0' <= self && self <= '9')
+        matches!(self, 'a'..='z' | 'A'..='Z' | '0'..='9')
             || self == '_'
             || (self > '\x7f' && derived_property::ID_Continue(self))
     }
