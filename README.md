@@ -19,10 +19,9 @@ fn main() {
 unicode-id supports a `no_std` feature. This eliminates dependence
 on std, and instead uses equivalent functions from core.
 
-
 ## changelog
 
-### 0.3.0
+### 0.3.2
 
 - Fix clippy warnings
 
