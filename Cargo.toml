@@ -12,7 +12,7 @@ homepage = "https://github.com/Boshen/unicode-id"
 repository = "https://github.com/Boshen/unicode-id"
 documentation = "https://docs.rs/unicode-id"
 license = "MIT OR Apache-2.0"
-keywords = ["text", "unicode", "unicode-id"]
+keywords = ["text", "unicode", "unicode-id", "tr31"]
 readme = "README.md"
 description = """
 Determine whether characters have the ID_Start
