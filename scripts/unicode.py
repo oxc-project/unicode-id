@@ -140,13 +140,13 @@ fn bsearch_range_table(c: char, r: &[(char,char)]) -> bool {
 }\n
 """)
 
-def emit_table(f, name, t_data, t_type = "&[(char, char)]", is_pub=True,
+def emit_table(f, name, t_data, t_type = "&[(char, char)]", is_static=True,
         pfun=lambda x: "(%s,%s)" % (escape_char(x[0]), escape_char(x[1])), is_const=True):
     pub_string = "const"
     if not is_const:
         pub_string = "let"
-    if is_pub:
-        pub_string = "pub " + pub_string
+    if is_static:
+        pub_string = "static"
     f.write("    %s %s: %s = &[\n" % (pub_string, name, t_type))
     data = ""
     first = True
