@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> Try the optimized version [unicode-id-start](https://github.com/Boshen/unicode-id-start).
+
 # unicode-id
 
 Determine if a `char` is a valid identifier for a parser and/or lexer according to
