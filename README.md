@@ -24,6 +24,10 @@ on std, and instead uses equivalent functions from core.
 
 ## changelog
 
+### 0.3.4
+
+- Update to Unicode 15.1.0
+
 ### 0.3.3
 
 - Update to Unicode 15.0.0

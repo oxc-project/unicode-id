@@ -1,6 +1,6 @@
 [package]
 name = "unicode-id"
-version = "0.3.3"
+version = "0.3.4"
 authors = [
            "Boshen <boshenc@gmail.com>",
            "erick.tryzelaar <erick.tryzelaar@gmail.com>",
