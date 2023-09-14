@@ -24,8 +24,8 @@ jobs:
         if: matrix.rust == 'nightly'
       - run: cargo test --features bench
         if: matrix.rust == 'nightly'
-      - run: cargo bench --features bench
-        if: matrix.rust == 'nightly'
+      # - run: cargo bench --features bench
+        # if: matrix.rust == 'nightly'
       - run: cargo build
       - run: cargo test
         if: matrix.rust != '1.17.0'

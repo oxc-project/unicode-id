@@ -27,9 +27,9 @@ default = []
 no_std = []
 bench = []
 
-[dev-dependencies]
-criterion = "0.3.5"
+# [dev-dependencies]
+# criterion = { version = "0.4.0", default-features = false }
 
-[[bench]]
-name = "id"
-harness = false
+# [[bench]]
+# name = "id"
+# harness = false
