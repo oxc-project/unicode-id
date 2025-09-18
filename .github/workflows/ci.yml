@@ -16,8 +16,8 @@ jobs:
       matrix:
         rust: [nightly, beta, stable, 1.58.1, 1.17.0]
     steps:
-      - uses: taiki-e/checkout-action@v1
-      - uses: actions-rs/toolchain@v1
+      - uses: taiki-e/checkout-action@b13d20b7cda4e2f325ef19895128f7ff735c0b3d # v1.3.1
+      - uses: actions-rs/toolchain@16499b5e05bf2e26879000db0c1d13f7e13fa3af # v1.0.7
         with:
           toolchain: ${{matrix.rust}}
           profile: minimal
