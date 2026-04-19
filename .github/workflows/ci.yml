@@ -17,11 +17,12 @@ jobs:
         rust: [nightly, beta, stable, 1.58.1, 1.17.0]
     steps:
       - uses: taiki-e/checkout-action@7d1e50e93dc4fb3bba58f85018fadf77898aee8b # v1.4.2
-      - uses: actions-rs/toolchain@16499b5e05bf2e26879000db0c1d13f7e13fa3af # v1.0.7
-        with:
-          toolchain: ${{matrix.rust}}
-          profile: minimal
-          override: true
+      - name: Install Rust ${{ matrix.rust }}
+        env:
+          RUST_TOOLCHAIN: ${{ matrix.rust }}
+        run: |
+          rustup toolchain install "$RUST_TOOLCHAIN" --profile minimal
+          rustup default "$RUST_TOOLCHAIN"
       - run: cargo build --features bench
         if: matrix.rust == 'nightly'
       - run: cargo test --features bench
