@@ -5,8 +5,7 @@ use unicode_id::UnicodeID;
 /// See: http://www.unicode.org/glossary/#unicode_scalar_value
 fn all_valid_chars() -> impl Iterator<Item = char> {
     (0u32..=0xD7FF).chain(0xE000u32..=0x10FFFF).map(|u| {
-        core::convert::TryFrom::try_from(u)
-            .expect("The selected range should be infallible if the docs match impl")
+        std::char::from_u32(u).expect("The selected range should contain only valid chars")
     })
 }
 

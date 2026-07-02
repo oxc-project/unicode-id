@@ -33,10 +33,9 @@
     html_favicon_url = "https://unicode-rs.github.io/unicode-rs_sm.png"
 )]
 #![no_std]
-#![cfg_attr(feature = "bench", feature(test, unicode_internals))]
+#![cfg_attr(feature = "bench", feature(test))]
 
 #[cfg(test)]
-#[macro_use]
 extern crate std;
 
 #[cfg(feature = "bench")]
@@ -51,6 +50,7 @@ mod tables;
 mod tests;
 
 /// Methods for determining if a character is a valid identifier character.
+#[allow(clippy::wrong_self_convention)]
 pub trait UnicodeID {
     /// Returns whether the specified character satisfies the 'ID_Start'
     /// Unicode property.
