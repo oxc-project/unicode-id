@@ -9,7 +9,7 @@
 // except according to those terms.
 
 #[cfg(feature = "bench")]
-use std::iter;
+use std::panic;
 #[cfg(feature = "bench")]
 use std::prelude::v1::*;
 #[cfg(feature = "bench")]
@@ -21,7 +21,7 @@ use UnicodeID;
 #[cfg(feature = "bench")]
 #[bench]
 fn cargo_is_id_start(b: &mut Bencher) {
-    let string = iter::repeat('a').take(4096).collect::<String>();
+    let string = "a".repeat(4096);
 
     b.bytes = string.len() as u64;
     b.iter(|| string.chars().all(super::UnicodeID::is_id_start));
@@ -30,7 +30,7 @@ fn cargo_is_id_start(b: &mut Bencher) {
 #[cfg(feature = "bench")]
 #[bench]
 fn stdlib_is_id_start(b: &mut Bencher) {
-    let string = iter::repeat('a').take(4096).collect::<String>();
+    let string = "a".repeat(4096);
 
     b.bytes = string.len() as u64;
     b.iter(|| string.chars().all(char::is_id_start));
@@ -39,7 +39,7 @@ fn stdlib_is_id_start(b: &mut Bencher) {
 #[cfg(feature = "bench")]
 #[bench]
 fn cargo_id_continue(b: &mut Bencher) {
-    let string = iter::repeat('a').take(4096).collect::<String>();
+    let string = "a".repeat(4096);
 
     b.bytes = string.len() as u64;
     b.iter(|| string.chars().all(super::UnicodeID::is_id_continue));
@@ -48,7 +48,7 @@ fn cargo_id_continue(b: &mut Bencher) {
 #[cfg(feature = "bench")]
 #[bench]
 fn stdlib_id_continue(b: &mut Bencher) {
-    let string = iter::repeat('a').take(4096).collect::<String>();
+    let string = "a".repeat(4096);
 
     b.bytes = string.len() as u64;
     b.iter(|| string.chars().all(char::is_id_continue));
