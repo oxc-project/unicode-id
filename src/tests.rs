@@ -65,9 +65,7 @@ fn test_is_id_start() {
 
 #[test]
 fn test_is_not_id_start() {
-    let chars = [
-        '\x00', '\x01', '0', '9', ' ', '[', '<', '{', '(', '\u{02c2}', '\u{ffff}',
-    ];
+    let chars = ['\x00', '\x01', '0', '9', ' ', '[', '<', '{', '(', '\u{02c2}', '\u{ffff}'];
 
     for ch in &chars {
         assert!(!super::UnicodeID::is_id_start(*ch), "{}", ch);
@@ -85,9 +83,7 @@ fn test_is_id_continue() {
 
 #[test]
 fn test_is_not_id_continue() {
-    let chars = [
-        '\x00', '\x01', ' ', '[', '<', '{', '(', '\u{02c2}', '\u{ffff}',
-    ];
+    let chars = ['\x00', '\x01', ' ', '[', '<', '{', '(', '\u{02c2}', '\u{ffff}'];
 
     for &ch in &chars {
         assert!(!super::UnicodeID::is_id_continue(ch), "{}", ch);
