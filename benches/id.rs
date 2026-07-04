@@ -1,7 +1,7 @@
 extern crate criterion;
 extern crate unicode_id;
 
-use criterion::{criterion_group, criterion_main, BenchmarkId, Criterion, Throughput};
+use criterion::{BenchmarkId, Criterion, Throughput, criterion_group, criterion_main};
 use unicode_id::UnicodeID;
 
 fn bench_unicode_id(c: &mut Criterion) {
@@ -13,57 +13,23 @@ fn bench_unicode_id(c: &mut Criterion) {
     group.bench_with_input(
         BenchmarkId::new("is_id_start", "unicode"),
         &unicode_chars,
-        |b, chars| {
-            b.iter(|| {
-                chars
-                    .iter()
-                    .rev()
-                    .map(|ch| UnicodeID::is_id_start(*ch))
-                    .next()
-            })
-        },
+        |b, chars| b.iter(|| chars.iter().rev().map(|ch| UnicodeID::is_id_start(*ch)).next()),
     );
     group.throughput(Throughput::Bytes(ascii_chars.len() as u64));
-    group.bench_with_input(
-        BenchmarkId::new("is_id_start", "ascii"),
-        &ascii_chars,
-        |b, chars| {
-            b.iter(|| {
-                chars
-                    .iter()
-                    .rev()
-                    .map(|ch| UnicodeID::is_id_start(*ch))
-                    .next()
-            })
-        },
-    );
+    group.bench_with_input(BenchmarkId::new("is_id_start", "ascii"), &ascii_chars, |b, chars| {
+        b.iter(|| chars.iter().rev().map(|ch| UnicodeID::is_id_start(*ch)).next())
+    });
     group.throughput(Throughput::Bytes(unicode_chars.len() as u64));
     group.bench_with_input(
         BenchmarkId::new("is_id_continue", "unicode"),
         &unicode_chars,
-        |b, chars| {
-            b.iter(|| {
-                chars
-                    .iter()
-                    .rev()
-                    .map(|ch| UnicodeID::is_id_continue(*ch))
-                    .next()
-            })
-        },
+        |b, chars| b.iter(|| chars.iter().rev().map(|ch| UnicodeID::is_id_continue(*ch)).next()),
     );
     group.throughput(Throughput::Bytes(ascii_chars.len() as u64));
     group.bench_with_input(
         BenchmarkId::new("is_id_continue", "ascii"),
         &ascii_chars,
-        |b, chars| {
-            b.iter(|| {
-                chars
-                    .iter()
-                    .rev()
-                    .map(|ch| UnicodeID::is_id_continue(*ch))
-                    .next()
-            })
-        },
+        |b, chars| b.iter(|| chars.iter().rev().map(|ch| UnicodeID::is_id_continue(*ch)).next()),
     );
     group.finish();
 }

@@ -41,8 +41,8 @@ extern crate std;
 #[cfg(feature = "bench")]
 extern crate test;
 
-use tables::derived_property;
 pub use tables::UNICODE_VERSION;
+use tables::derived_property;
 
 mod tables;
 
