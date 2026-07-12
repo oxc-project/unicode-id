@@ -1,5 +1,4 @@
 target
-Cargo.lock
 scripts/tmp
 DerivedCoreProperties.txt
 ReadMe.txt
