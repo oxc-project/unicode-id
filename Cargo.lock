@@ -209,7 +209,7 @@ dependencies = [
 
 [[package]]
 name = "unicode-id"
-version = "0.3.6"
+version = "0.3.7"
 dependencies = [
  "criterion2 3.0.4 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
