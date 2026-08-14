@@ -33,3 +33,9 @@ criterion2 = "3.0.4"
 [[bench]]
 name = "id"
 harness = false
+
+[profile.dev]
+debug = "line-tables-only"
+
+[profile.dev.package."*"]
+debug = false
