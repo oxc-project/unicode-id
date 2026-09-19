@@ -36,7 +36,7 @@ preamble = '''// Copyright 2012-2015 The Rust Project Developers. See the COPYRI
 
 def fetch(f):
     if not os.path.exists(os.path.basename(f)):
-        os.system("curl -O http://www.unicode.org/Public/UNIDATA/%s"
+        os.system("curl -O https://www.unicode.org/Public/UNIDATA/%s"
                   % f)
 
     if not os.path.exists(os.path.basename(f)):
@@ -178,8 +178,8 @@ if __name__ == "__main__":
         # download and parse all the data
         fetch("ReadMe.txt")
         with open("ReadMe.txt") as readme:
-            pattern = "for Version (\d+)\.(\d+)\.(\d+) of the Unicode"
-            unicode_version = re.search(pattern, readme.read()).groups()
+            pattern = r"version (\d+)\.(\d+)\.(\d+) of the\s+Unicode"
+            unicode_version = re.search(pattern, readme.read(), re.IGNORECASE).groups()
         rf.write("""
 /// The version of [Unicode](http://www.unicode.org/)
 /// that this version of unicode-id is based on.
