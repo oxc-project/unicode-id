@@ -46,7 +46,7 @@ dependencies = [
 
 [[package]]
 name = "criterion2"
-version = "3.0.4"
+version = "3.0.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "bpaf 0.9.26 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -211,7 +211,7 @@ dependencies = [
 name = "unicode-id"
 version = "0.3.7"
 dependencies = [
- "criterion2 3.0.4 (registry+https://github.com/rust-lang/crates.io-index)",
+ "criterion2 3.0.5 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -250,7 +250,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum ciborium 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)" = "42e69ffd6f0917f5c029256a24d0161db17cea3997d185db0d35926308770f0e"
 "checksum ciborium-io 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)" = "05afea1e0a06c9be33d539b876f1ce3692f4afea2cb41f740e7743225ed1c757"
 "checksum ciborium-ll 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)" = "57663b653d948a338bfb3eeba9bb2fd5fcfaecb9e199e87e1eda4d9e8b240fd9"
-"checksum criterion2 3.0.4 (registry+https://github.com/rust-lang/crates.io-index)" = "b961b72d7eaf7444d1eb98d353d5c2aa08e2443d77fef6bff0e6e97064162482"
+"checksum criterion2 3.0.5 (registry+https://github.com/rust-lang/crates.io-index)" = "c05b34b35eab2582f4aa64f19d973691ba520ef499916322575403c55da3b1c9"
 "checksum crossbeam-deque 0.8.7 (registry+https://github.com/rust-lang/crates.io-index)" = "5181e0de7b61eb03a81e347d6dd8797bae9da5146707b51077e2d71a54ec0ceb"
 "checksum crossbeam-epoch 0.9.20 (registry+https://github.com/rust-lang/crates.io-index)" = "2d6914041f254d6e9176c01941b21115dcfb7089e55135a35411081bd106ef3f"
 "checksum crossbeam-utils 0.8.22 (registry+https://github.com/rust-lang/crates.io-index)" = "61803da095bee82a81bb1a452ecc25d3b2f1416d1897eb86430c6159ef717c17"
