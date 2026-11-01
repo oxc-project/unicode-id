@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.8](https://github.com/oxc-project/unicode-id/compare/v0.3.7...v0.3.8) - 2026-11-01
+
+### Other
+
+- *(deps)* update rust crate criterion2 to v3.0.5 ([#38](https://github.com/oxc-project/unicode-id/pull/38))
+- release v0.3.7 ([#12](https://github.com/oxc-project/unicode-id/pull/12))
+
 ## [0.3.7](https://github.com/oxc-project/unicode-id/compare/v0.3.6...v0.3.7) - 2026-09-19
 
 ### Other
